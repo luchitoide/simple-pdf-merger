@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ChangeDetectorRef } from '@angular/core';
 import { mergePDFFiles } from '../shared/pdf-merger-utils';
 
 @Component({
@@ -9,6 +9,8 @@ import { mergePDFFiles } from '../shared/pdf-merger-utils';
 export class PdfMergerComponent {
   mergedPDF: Blob | null = null;
   isMerged = false;
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
   onFileChange(event: any): void {
     // Aquí puedes manejar la lógica para actualizar la lista de archivos seleccionados si es necesario
