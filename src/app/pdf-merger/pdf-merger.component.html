@@ -1,0 +1,8 @@
+<div>
+  <h2>Unir archivos PDF</h2>
+  <input type="file" accept=".pdf" multiple id="pdfFiles" (change)="onFileChange($event)" />
+  <button (click)="mergePDFs()">Unir PDFs</button>
+</div>
+<ng-container *ngIf="isMerged && getMergedPDFUrl()">
+  <a [href]="getMergedPDFUrl()!" download="merged_pdf.pdf">Descargar PDF Unido</a>
+</ng-container>
